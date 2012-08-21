@@ -129,6 +129,9 @@ __BEGIN_DECLS
 /* Query if surround sound recording is supported */
 #define AUDIO_PARAMETER_KEY_SSR "ssr"
 
+#define AUDIO_PARAMETER_RAW_DATA_OUT "raw_data_output"
+
+
 /**************************************/
 
 /* common audio stream configuration parameters */

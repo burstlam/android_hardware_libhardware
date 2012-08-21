@@ -142,6 +142,65 @@ enum {
     HWC_EVENT_ORIENTATION    // To notify HWC about the device orientation
 };
 
+/* names for setParameter() */
+enum {
+    /* rotation of the source image in degrees (0 to 359) */
+    HWC_LAYER_ROTATION_DEG  	= 1,
+    /* enable or disable dithering */
+    HWC_LAYER_DITHER        	= 3,
+    HWC_LAYER_SETMODE = 9,
+    /* transformation applied (this is a superset of COPYBIT_ROTATION_DEG) */
+    HWC_LAYER_SETINITPARA,
+    /* set videoplayer init overlay parameter */
+    HWC_LAYER_SETVIDEOPARA,
+    /* set videoplayer play frame overlay parameter*/
+    HWC_LAYER_SETFRAMEPARA,
+    /* get videoplayer play frame overlay parameter*/
+    HWC_LAYER_GETCURFRAMEPARA,
+    /* query video blank interrupt*/
+    HWC_LAYER_QUERYVBI,
+    /* set overlay screen id*/
+    HWC_LAYER_SETSCREEN,
+    
+    HWC_LAYER_SHOW,
+
+    HWC_LAYER_RELEASE,
+    
+    HWC_LAYER_SET3DMODE,
+    HWC_LAYER_SETFORMAT,
+
+    HWC_LAYER_VPPON,
+    HWC_LAYER_VPPGETON,
+
+    HWC_LAYER_SETLUMASHARP,
+    HWC_LAYER_GETLUMASHARP,
+
+    HWC_LAYER_SETCHROMASHARP,
+    HWC_LAYER_GETCHROMASHARP,
+
+    HWC_LAYER_SETWHITEEXTEN,
+    HWC_LAYER_GETWHITEEXTEN,
+
+    HWC_LAYER_SETBLACKEXTEN,
+    HWC_LAYER_GETBLACKEXTEN,
+};
+
+/* possible overlay formats */
+enum 
+{
+    HWC_FORMAT_MINVALUE     = 0x50,
+    HWC_FORMAT_RGBA_8888    = 0x51,
+    HWC_FORMAT_RGB_565      = 0x52,
+    HWC_FORMAT_BGRA_8888    = 0x53,
+    HWC_FORMAT_YCbYCr_422_I = 0x54,
+    HWC_FORMAT_CbYCrY_422_I = 0x55,
+    HWC_FORMAT_MBYUV420		= 0x56,
+    HWC_FORMAT_MBYUV422		= 0x57,
+    HWC_FORMAT_YUV420PLANAR	= 0x58,
+    HWC_FORMAT_DEFAULT      = 0x99,    // The actual color format is determined
+    HWC_FORMAT_MAXVALUE     = 0x100
+};
+
 /*****************************************************************************/
 
 __END_DECLS
