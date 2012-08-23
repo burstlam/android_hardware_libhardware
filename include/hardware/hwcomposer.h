@@ -217,18 +217,38 @@ enum
     HWC_3D_SRC_MODE_NORMAL = 0xFF//2d
 };
 
+enum
+{
+    HWC_3D_OUT_MODE_TB = 0x0,//top bottom
+    HWC_3D_OUT_MODE_FP = 0x1,//frame packing
+    HWC_3D_OUT_MODE_SSF = 0x2,//side by side full
+    HWC_3D_OUT_MODE_SSH = 0x3,//side by side half
+    HWC_3D_OUT_MODE_LI = 0x4,//line interleaved
+    HWC_3D_OUT_MODE_CI_1 = 0x5,//column interlaved 1
+    HWC_3D_OUT_MODE_CI_2 = 0x6,//column interlaved 2
+    HWC_3D_OUT_MODE_CI_3 = 0x7,//column interlaved 3
+    HWC_3D_OUT_MODE_CI_4 = 0x8,//column interlaved 4
+    HWC_3D_OUT_MODE_LIRGB = 0x9,//line interleaved rgb
+    HWC_3D_OUT_MODE_FA = 0xa,//field alternative
+    HWC_3D_OUT_MODE_LA = 0xb,//line alternative
+    
+    HWC_3D_OUT_MODE_NORMAL = 0xFF,//line alternative
+};
+
+/* names for setParameter() */
+enum {
+	HWC_DISP_MODE_2D 		= 0x0,
+	HWC_DISP_MODE_3D 		= 0x1,
+	HWC_DISP_MODE_ANAGLAGH 	= 0x2,
+	HWC_DISP_MODE_ORIGINAL 	= 0x3,
+};
+
 /* names for setParameter() */
 enum {
     HWC_3D_OUT_MODE_2D 		            = 0x0,//left picture
     HWC_3D_OUT_MODE_HDMI_3D_1080P24_FP 	= 0x1,
     HWC_3D_OUT_MODE_ANAGLAGH 	        = 0x2,//·ÖÉ«
     HWC_3D_OUT_MODE_ORIGINAL 	        = 0x3,//original pixture
-
-    HWC_3D_OUT_MODE_LI                  = 0x4,//line interleaved
-    HWC_3D_OUT_MODE_CI_1                = 0x5,//column interlaved 1
-    HWC_3D_OUT_MODE_CI_2                = 0x6,//column interlaved 2
-    HWC_3D_OUT_MODE_CI_3                = 0x7,//column interlaved 3
-    HWC_3D_OUT_MODE_CI_4                = 0x8,//column interlaved 4
 
     HWC_3D_OUT_MODE_HDMI_3D_720P50_FP   = 0x9,
     HWC_3D_OUT_MODE_HDMI_3D_720P60_FP   = 0xa
@@ -268,6 +288,8 @@ typedef struct tag_Video3DInfo
 	unsigned int format;
 	unsigned int src_mode;
 	unsigned int display_mode;
+	unsigned int _3d_mode;
+	unsigned int is_mode_changed;
 }video3Dinfo_t;
 
 typedef struct tag_PanScanInfo
